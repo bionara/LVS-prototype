@@ -1,0 +1,32 @@
+/* fatter fonts for hi res devices! !important is required as there's quite a few font-weight rules */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    html body div#container {
+        h1, h2, h3, h4, h5 {
+            font-weight: 800 !important;
+            letter-spacing: -1px;
+        }
+        p, a, blockquote {
+            font-weight: 600 !important;
+            letter-spacing: -1px;
+            line-height: 1.1em;
+        }
+    }
+}
+
+/* All iPhone / phone, up to iPad portrait */
+@media (min-width: @iphone-portrait) and (max-width: (@ipad-portrait - 1)) { 
+html body {
+    div#container {
+
+    }
+}
+}
+
+/* All iPhone / phone, up to ipad landscape [mostly for nav structure/base stuff] */
+@media (min-width: @iphone-portrait) and (max-width: (@ipad-landscape)) { 
+html body {
+    div#container {
+
+    }
+}
+}

@@ -1,0 +1,56 @@
+/* Compile with lessc styles.less > styles.css until compile static is set up */
+
+@iphone-landscape: 480px;
+@iphone-portrait: 320px;
+@phone-max-portrait: 360px; /* EG Samsung Galaxy,   360 * 640  */
+@phone-max-landscape: 360px; /* EG Samsung Galaxy */
+@ipad-landscape: 1024px;
+@ipad-portrait: 768px;
+@desktop: 1400px;
+@desktop-large-screen: 2560px;
+@desktop-min: 1024px;
+
+@hotpink: #ff20bd;
+@hotpink-highlight: #c6009a;
+@padding-row: 0.75em 0.65em;
+
+@text-size-tiny: 16px;
+@text-size-small: 22px;
+@text-size-med: 26px;
+@text-size-large: 30px;
+@text-size-mega: 55px;
+
+@import "promos.less";
+@import "gradients.less";
+@import "retina.less";
+/* Media queries for specific devices are in external less files */
+@import "iphone.less";
+@import "ipad.less";
+@import "ipad-landscape.less";
+@import "desktop.less";
+
+/* Some useful less files to help keep styles.less a bit lighter */
+@import "forms.less";
+@import "booking.less";
+@import "header-footer.less";
+@import "carousels.less";
+@import "blog.less";
+
+
+body {
+    font-size: 18px;
+    line-height: 1em;
+    text-align: center;
+    background: @dark-purple;
+    color: #fff;
+
+    p, ul li, blockquote, a.button, label { letter-spacing: 0px; font-weight: normal; }
+    h1, h2, h3, h4 { letter-spacing: 0px; font-weight: normal; }
+
+    #container {
+
+        text-align: left;
+        margin: auto;   
+        overflow: hidden; 
+    }
+}
