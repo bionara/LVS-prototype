@@ -2,8 +2,6 @@
 
 @iphone-landscape: 480px;
 @iphone-portrait: 320px;
-@phone-max-portrait: 360px; /* EG Samsung Galaxy,   360 * 640  */
-@phone-max-landscape: 360px; /* EG Samsung Galaxy */
 @ipad-landscape: 1024px;
 @ipad-portrait: 768px;
 @desktop: 1400px;
@@ -12,45 +10,194 @@
 
 @hotpink: #ff20bd;
 @hotpink-highlight: #c6009a;
-@padding-row: 0.75em 0.65em;
+@padding-row: 30px;
 
 @text-size-tiny: 16px;
-@text-size-small: 22px;
+@text-size-small: 18px;
 @text-size-med: 26px;
-@text-size-large: 30px;
+@text-size-large: 36px;
 @text-size-mega: 55px;
 
-@import "promos.less";
-@import "gradients.less";
-@import "retina.less";
-/* Media queries for specific devices are in external less files */
+/* style imports */
 @import "iphone.less";
 @import "ipad.less";
-@import "ipad-landscape.less";
 @import "desktop.less";
-
-/* Some useful less files to help keep styles.less a bit lighter */
-@import "forms.less";
-@import "booking.less";
-@import "header-footer.less";
-@import "carousels.less";
-@import "blog.less";
+@import "panels.less";
 
 
 body {
-    font-size: 18px;
+    font-size: @text-size-small;
     line-height: 1em;
     text-align: center;
-    background: @dark-purple;
-    color: #fff;
+    background: #fff;
+    color: #000;
 
-    p, ul li, blockquote, a.button, label { letter-spacing: 0px; font-weight: normal; }
-    h1, h2, h3, h4 { letter-spacing: 0px; font-weight: normal; }
+    p, ul li, blockquote, a.button, label, input, select { letter-spacing: 0px; font-weight: normal; }
+    h1, h2, h3, h4, h5 { letter-spacing: 0px; font-weight: normal; text-transform: uppercase; color: @hotpink; }
+
+    /* Font sizes should never deviate! */
+    h1 {
+        font-size: @text-size-large;
+        margin: 30px 0;
+    }
+    h2, h3, h4, h5 {
+        font-size: @text-size-small;
+        margin: 15px 0;
+        &.subheader {
+            margin-top: -30px;
+        }
+    }
+    h2 {
+        font-size: @text-size-med;
+    }
+    p, ol, ul, ol li, ul li, blockquote, form, fieldset, input, select, label {
+        font-size: @text-size-small;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        &.small-text {
+            font-size: @text-size-tiny;
+        }
+    }
+    p {
+        margin: 15px 0;
+        font-size: @text-size-small;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: @hotpink;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    a.button, input.button {
+        display: inline-block;
+        padding: 10px;
+        background: @hotpink;
+        color: #fff;
+        width: auto;
+        margin: auto;
+    }
+
+    ol:not(.bullets) li, ul:not(.bullets) li {
+        list-style: none;
+    }
+    nav ol li, nav ul li {
+        display: inline-block;
+        width: auto;
+        padding: 5px;
+    }
+
+    .dynamic-bg-img {
+        background: #e1e1e1 url('../img/placeholder.jpg') no-repeat top left;
+        background-size: cover;
+        height: 100%;
+        display: block;
+    }
+
+    .row {
+        padding: @padding-row;
+    }
 
     #container {
 
         text-align: left;
         margin: auto;   
         overflow: hidden; 
+
+        /* Width of content */
+        max-width: @desktop;
+
+        header {
+            nav {
+                text-align: right;
+            }
+        }
+        footer {
+            font-size: @text-size-tiny;
+            ul {
+                li {
+                    font-size: @text-size-tiny;
+                }
+            }
+        }
+
+        table {
+            width: 94%;
+            margin: auto;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+
+            &:last-child {
+                margin-bottom: 30px;
+            }
+            tr {
+
+                &:nth-child(even) {
+                    td {
+                        background-color: #efefef;
+                        width: 210px;
+                    }
+                }
+                td, th {
+                    padding: 4px;
+                    &:first-child {
+                        border-right: 5px solid #fff;
+                    }
+                }
+                th:first-child {
+                    text-align: left;
+                    width: 200px;
+                }
+                td {
+                    &:first-child {
+                        text-align: left;                    
+                    }
+                    &.feature-yes, &.feature-no {
+                        background-image: url('../img/feature-icons.png');
+                        background-repeat: no-repeat;
+                        background-position: 50% 10px;
+                        font-size: 0px;
+                    }
+                    &.feature-no {
+                        background-position: 50% -44px;
+                    }
+                }
+                th {
+                    background: @hotpink;
+                    color: #fff;
+                    font-size: 16px;
+                }
+                
+                /* special colour headers! */
+                &.pink {
+                    th, td {
+                        background: #E100AF;
+                    }
+                }
+                &.purple {
+                    th, td {
+                        background: #7D00B9;
+                    }
+                }
+                &.purple-dark {
+                    th, td {
+                        background: #0F0037;
+                    }
+                }
+                &.blue {
+                    th, td {
+                        background: #00aadc;
+                    }
+                }
+                &.grey {
+                    th, td {
+                        background: #9B9B9B;
+                    }
+                }
+            }
+        }
     }
 }

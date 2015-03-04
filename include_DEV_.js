@@ -24,10 +24,9 @@ $(document).ready(function() {
             $(el).html(includeHtml[el.attr('data-inc')]);
         });
     });
-    
+
     // Update any page functions after loading this into the template - necessary for dev js-include system only
     window.updateBackgrounds();
     window.setNav();
-    window.updateLVBFunctions();
 
 });

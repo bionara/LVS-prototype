@@ -1,0 +1,329 @@
+/* Compile with lessc styles.less > styles.css until compile static is set up */
+/* style imports */
+/* fatter fonts for hi res devices! !important is required as there's quite a few font-weight rules */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  html body div#container h1,
+  html body div#container h2,
+  html body div#container h3,
+  html body div#container h4,
+  html body div#container h5 {
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+  }
+  html body div#container p,
+  html body div#container a,
+  html body div#container blockquote {
+    font-weight: 600 !important;
+    letter-spacing: -1px;
+    line-height: 1.1em;
+  }
+}
+/* All iPhone / phone, up to iPad portrait */
+/* All iPhone / phone, up to ipad landscape [mostly for nav structure/base stuff] */
+/* iPad portrait and above. Landscape and above are handled in ipad-landscape.less */
+/* Specific styles for ipad landscape and beyond */
+/*
+  All Desktop 
+  Note that desktop has a max width of 1400, then centers the content (or it looks weird).
+  This is 2800 for hi-res (macbook pro retina)
+*/
+/* fatter fonts for hi res devices! !important is required as there's quite a few font-weight rules */
+html body {
+  /* Generic styles for all panels */
+  /* A header panel with a big image and text/button in it */
+  /* A split panel containing 2, 3 or 4 columns (bootstrap will handle this) */
+  /* A visual panel with a central image and text placed in each corner */
+  /* A split panel: half text half image. */
+  /* A simple panel that holds a block of html inserted via cms */
+  /* panel 6 holds a line of text plus a button beneath it. It is centered (sort of like a banner ad) */
+}
+html body .panel {
+  width: 100%;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+html body .item h1,
+html body .item h2,
+html body .item h3,
+html body .item h4,
+html body .item h5 {
+  margin-top: 0;
+}
+html body .panel-1 {
+  border: 1px solid red;
+  text-align: center;
+  height: 450px;
+  padding-top: 200px;
+}
+html body .panel-2 {
+  border: 1px solid blue;
+  text-align: center;
+}
+html body .panel-2 form {
+  text-align: center;
+}
+html body .panel-2 .item {
+  height: 380px;
+  border: 1px dashed blue;
+}
+html body .panel-2 .item h3 {
+  padding-top: 60px;
+}
+html body .panel-2 .item div.item-text {
+  margin-top: 190px;
+}
+html body .panel-2 .dynamic-bg-img {
+  background-position: 50% 50%;
+}
+html body .panel-3 {
+  border: 1px solid green;
+  height: 475px;
+  position: relatve;
+}
+html body .panel-3 .item {
+  border: 1px dashed green;
+  margin: 0;
+  width: 40%;
+  height: 380px;
+  float: left;
+  padding-top: 20px;
+  /* Position each block in its corner */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+html body .panel-3 .item:nth-child(2) {
+  top: 304px;
+}
+html body .panel-3 .item:nth-child(3) {
+  right: 0;
+  left: auto;
+}
+html body .panel-3 .item:nth-child(4) {
+  top: 304px;
+  right: 0;
+  left: auto;
+}
+html body .panel-3 .item-button {
+  position: absolute;
+  top: 360px;
+  left: 45%;
+}
+html body .panel-4 {
+  border: 1px solid yellow;
+}
+html body .panel-4 .dynamic-bg-img {
+  width: 100%;
+  background-size: cover;
+  height: 380px;
+}
+html body .panel-5 {
+  border: 1px dotted green;
+}
+html body .panel-5 .code-wrapper {
+  background: #f9c9ff;
+}
+html body .panel-6 {
+  border: 1px dotted orange;
+  text-align: center;
+}
+body {
+  font-size: 18px;
+  line-height: 1em;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  /* Font sizes should never deviate! */
+}
+body p,
+body ul li,
+body blockquote,
+body a.button,
+body label,
+body input,
+body select {
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5 {
+  letter-spacing: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #ff20bd;
+}
+body h1 {
+  font-size: 36px;
+  margin: 30px 0;
+}
+body h2,
+body h3,
+body h4,
+body h5 {
+  font-size: 18px;
+  margin: 15px 0;
+}
+body h2.subheader,
+body h3.subheader,
+body h4.subheader,
+body h5.subheader {
+  margin-top: -30px;
+}
+body h2 {
+  font-size: 26px;
+}
+body p,
+body ol,
+body ul,
+body ol li,
+body ul li,
+body blockquote,
+body form,
+body fieldset,
+body input,
+body select,
+body label {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+body p.small-text,
+body ol.small-text,
+body ul.small-text,
+body ol li.small-text,
+body ul li.small-text,
+body blockquote.small-text,
+body form.small-text,
+body fieldset.small-text,
+body input.small-text,
+body select.small-text,
+body label.small-text {
+  font-size: 16px;
+}
+body p {
+  margin: 15px 0;
+  font-size: 18px;
+  padding: 0;
+}
+body a {
+  text-decoration: none;
+  color: #ff20bd;
+}
+body a:hover {
+  text-decoration: underline;
+}
+body a.button,
+body input.button {
+  display: inline-block;
+  padding: 10px;
+  background: #ff20bd;
+  color: #fff;
+  width: auto;
+  margin: auto;
+}
+body ol:not(.bullets) li,
+body ul:not(.bullets) li {
+  list-style: none;
+}
+body nav ol li,
+body nav ul li {
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+}
+body .dynamic-bg-img {
+  background: #e1e1e1 url('../img/placeholder.jpg') no-repeat top left;
+  background-size: cover;
+  height: 100%;
+  display: block;
+}
+body .row {
+  padding: 30px;
+}
+body #container {
+  text-align: left;
+  margin: auto;
+  overflow: hidden;
+  /* Width of content */
+  max-width: 1400px;
+}
+body #container header nav {
+  text-align: right;
+}
+body #container footer {
+  font-size: 16px;
+}
+body #container footer ul li {
+  font-size: 16px;
+}
+body #container table {
+  width: 94%;
+  margin: auto;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+body #container table:last-child {
+  margin-bottom: 30px;
+}
+body #container table tr {
+  /* special colour headers! */
+}
+body #container table tr:nth-child(even) td {
+  background-color: #efefef;
+  width: 210px;
+}
+body #container table tr td,
+body #container table tr th {
+  padding: 4px;
+}
+body #container table tr td:first-child,
+body #container table tr th:first-child {
+  border-right: 5px solid #fff;
+}
+body #container table tr th:first-child {
+  text-align: left;
+  width: 200px;
+}
+body #container table tr td:first-child {
+  text-align: left;
+}
+body #container table tr td.feature-yes,
+body #container table tr td.feature-no {
+  background-image: url('../img/feature-icons.png');
+  background-repeat: no-repeat;
+  background-position: 50% 10px;
+  font-size: 0px;
+}
+body #container table tr td.feature-no {
+  background-position: 50% -44px;
+}
+body #container table tr th {
+  background: #ff20bd;
+  color: #fff;
+  font-size: 16px;
+}
+body #container table tr.pink th,
+body #container table tr.pink td {
+  background: #E100AF;
+}
+body #container table tr.purple th,
+body #container table tr.purple td {
+  background: #7D00B9;
+}
+body #container table tr.purple-dark th,
+body #container table tr.purple-dark td {
+  background: #0F0037;
+}
+body #container table tr.blue th,
+body #container table tr.blue td {
+  background: #00aadc;
+}
+body #container table tr.grey th,
+body #container table tr.grey td {
+  background: #9B9B9B;
+}

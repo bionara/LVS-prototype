@@ -1,0 +1,114 @@
+html body {
+    
+    @item-default-height: 380px;
+    @padding-top: 20px;
+
+    /* Generic styles for all panels */
+    .panel {
+        width: 100%;
+        background: #f5f5f5;
+        overflow: hidden;
+    }
+    .item {
+        h1, h2, h3, h4, h5 {
+            margin-top: 0;
+        }
+    }
+
+    /* A header panel with a big image and text/button in it */
+    .panel-1 {
+        border:1px solid red;
+        text-align: center;
+        height: 450px;
+        padding-top: 200px;
+    }
+
+    /* A split panel containing 2, 3 or 4 columns (bootstrap will handle this) */
+    .panel-2 {
+        border:1px solid blue;
+        text-align: center;
+        form {
+            text-align: center;
+        }
+        .item {
+            height: @item-default-height;
+            border:1px dashed blue;
+            h3 {
+                padding-top: 60px;
+            }
+            div.item-text {
+                margin-top: 190px;
+            }
+        }
+        .dynamic-bg-img {
+            background-position: 50% 50%;
+        }
+    }
+
+    /* A visual panel with a central image and text placed in each corner */
+    .panel-3 {
+        border:1px solid green;
+        height: @item-default-height * 1.25;
+        position: relatve;
+        .item {
+            border: 1px dashed green;
+            margin: 0;
+            width: 40%;
+            height: @item-default-height;
+            float: left;
+            padding-top: @padding-top;
+            /* Position each block in its corner */
+            position: absolute;
+            top: 0;
+            left: 0;
+            &:nth-child(2) {
+                top: @item-default-height / 1.25;
+            }
+            &:nth-child(3) {
+                right: 0;
+                left: auto;
+            }
+            &:nth-child(4) {
+                top: @item-default-height / 1.25;
+                right: 0;
+                left: auto;
+            }
+        }
+        .item-button {
+            position: absolute;
+            top: 360px;
+            left: 45%;
+        }
+    }
+
+    /* A split panel: half text half image. */
+    .panel-4 {
+        border:1px solid yellow;
+        .dynamic-bg-img {
+            width: 100%;
+            background-size:cover;
+            height: @item-default-height;
+        }
+        &.panel-4-img-left {
+
+        }
+        &.panel-4-img-right {
+
+        }
+    }
+
+    /* A simple panel that holds a block of html inserted via cms */
+    .panel-5 {
+        border:1px dotted green;
+        .code-wrapper {
+            background: #f9c9ff;
+        }
+    }
+
+    /* panel 6 holds a line of text plus a button beneath it. It is centered (sort of like a banner ad) */
+    .panel-6 {
+        border:1px dotted orange;
+        text-align: center;
+        
+    }
+}

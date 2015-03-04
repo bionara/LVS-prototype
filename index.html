@@ -23,19 +23,304 @@
             <div class="col-xs-8 col-sm-5 col-md-4">
                 <div id="logo"><a href="index.html"><img src="img/logo.png" /></a></div>
             </div>
-            <nav>
+            <nav class="col-xs-4 col-sm-7 col-lg-8">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Link 1</a></li>
+                    <li><a href="index.html">Link 2</a></li>
+                    <li><a href="index.html">Link 3</a></li>
+                    <li><a href="index.html">Link 4</a></li>
                 </ul>
             </nav>
         </header>
 
         <div id="content" class="row text-left">
-            <div class="row">
+
+            <div class="row panel panel-1">
                 <div class="col-xs-12">
-                    <h1>Title</h1>
+                    <h1>Our Karaoke. Your business</h1>
+                    <h2 class="subheader">Nothing compares.</h2>
+                    <p>Cras feugiat viverra fermentum. Etiam elementum convallis dolor, nec rutrum leo laoreet nec.</p>
+                        <p> Etiam sit amet mi ornare, varius odio a.</p>
+                    <p><a href="sing" class="button">Get singstation now</a></p>
                 </div>
             </div>
+
+            <div class="row panel panel-2 panel-2-three-items">
+                <div class="col-xs-12 col-sm-4 item dynamic-bg-img"
+                    data-img-phone="img/placeholder.jpg"
+                    data-img-phone-retina="img/placeholder.jpg"
+                    data-img-desktop="img/placeholder.jpg"
+                    data-bg-size="cover"
+                >
+                    <h3>Item 1</h3>
+                    <div class="item-text">
+                        <p>Some text about the item goes here. Something really interesting.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 item dynamic-bg-img"
+                    data-img-phone="img/placeholder.jpg"
+                    data-img-phone-retina="img/placeholder.jpg"
+                    data-img-desktop="img/placeholder.jpg"
+                    data-bg-size="cover"
+                >
+                    <h3>Item 2</h3>
+                    <div class="item-text">
+                        <p>Some text about the item goes here. Something really interesting.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 item dynamic-bg-img"
+                    data-img-phone="img/placeholder.jpg"
+                    data-img-phone-retina="img/placeholder.jpg"
+                    data-img-desktop="img/placeholder.jpg"
+                    data-bg-size="cover"
+                >
+                    <h3>Item 3</h3>
+                    <div class="item-text">
+                        <p>Some text about the item goes here. Something really interesting.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                panel-3 is used to create a vertical split of content. It can have 2, 3 or 4 items 
+                an image can be put on the whole .item, or held in place (as seen further down in this html file)
+            -->
+            <div class="row panel panel-3 dynamic-bg-img"
+                data-img-phone="img/placeholder.jpg"
+                data-img-phone-retina="img/placeholder.jpg"
+                data-img-desktop="img/placeholder.jpg"
+                data-bg-size="cover"
+            >
+                <div class="col-xs-12">
+                    <h2 class="item">Singstation [block 1]</h2>
+                    <!-- There can be 1, 2 or 3 of the following text blocks. They stack bottom left, top right, bottom right, following on from the header above. The button is static-->
+                    <div class="item">
+                        <h5>Header text</h5>
+                        <p>This is the text for text block two.</p>
+                    </div>
+                    <div class="item">
+                        <h5>Header text</h5>
+                        <p>This is the text for text block three.</p>
+                    </div>
+                    <div class="item">
+                        <h5>Header text</h5>
+                        <p>This is the text for text block four.</p>
+                    </div>
+                    <div class="item-button">
+                        <a href="button" class="button">Click me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- note that this part is panel-2 again! just configured differently for 2 instead of 3 panel layout -->
+            <div class="row panel panel-2 panel-2-two-items">
+                <div class="col-xs-12 col-sm-6 item">
+                    <h3>Get in touch</h3>
+                    <div class="item-text">
+                        <p>Some text about the item goes here. Something really interesting.</p>
+                        <p><a href="" class="button">Contact</a></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 item">
+                    <h3>Keep up to date</h3>
+                    <div class="item-text">
+                        <p>Subheader goes here</p>
+                        <form action="" method="">
+                            <input type"text" name="email" placeholder="email" />
+                            <p>[capture]</p>
+                            <input tpye="submit" class="button" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row panel panel-4 panel-4-img-left">
+                <div class="col-xs-12 col-sm-6 item">
+                    <div class="dynamic-bg-img"
+                        data-img-phone="img/placeholder.jpg"
+                        data-img-phone-retina="img/placeholder.jpg"
+                        data-img-desktop="img/placeholder.jpg"
+                        data-bg-size="cover"
+                    >
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 item">
+                    <h3>Header text here</h3>
+                    <div class="item-text">
+                        <p>Cras feugiat viverra fermentum. Etiam elementum convallis dolor, nec rutrum leo laoreet nec.</p>
+                        <p> Etiam sit amet mi ornare, varius odio a, commodo mi. Nullam feugiat feugiat iaculis. Etiam fermentum neque pellentesque ornare volutpat.</p>
+                        <p>Mauris sit amet est pretium, sodales massa ac, commodo ante. In eu consectetur dolor, ultrices gravida tortor.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel eros rhoncus, vestibulum tortor non, facilisis ligula. Nulla facilisi. Vestibulum eu nisl sit amet felis aliquet pharetra.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- user img_left=true to toggle placement of img/text? -->
+            <div class="row panel panel-4 panel-4-img-right">
+                <div class="col-xs-12 col-sm-6 item">
+                    <h3>Header text here</h3>
+                    <div class="item-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id tortor pretium, pretium risus et, elementum eros.</p>
+                        <p>Cras feugiat viverra fermentum. Etiam elementum convallis dolor, nec rutrum leo laoreet nec. Etiam sit amet mi ornare, varius odio a, commodo mi. Nullam feugiat feugiat iaculis. Etiam fermentum neque pellentesque ornare volutpat.</p>
+                        <p>In lacus tellus, semper eget nisl sit amet, interdum facilisis ligula. Duis feugiat, lacus vitae dignissim volutpat, nibh elit fringilla lacus, sed volutpat ante elit vel nunc. Aliquam erat volutpat. Ut quis facilisis nisi.</p>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 item">
+                    <div class="dynamic-bg-img"
+                        data-img-phone="img/placeholder.jpg"
+                        data-img-phone-retina="img/placeholder.jpg"
+                        data-img-desktop="img/placeholder.jpg"
+                        data-bg-size="cover"
+                    >
+                    </div>
+                </div>
+            </div>
+
+            <!-- panel-5 is used to contain a blob of html-->
+            <div class="row panel panel-5">
+                <div class="html-wrapper">
+                    <p>This panel holds a block of html from the cms</p>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr class="pink">
+                                <th>Internet</th>
+                                <th>Singstation</th>
+                                <th>Singstation Plus</th>
+                            </tr>
+                            <tr>
+                                <td>Ethernet</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Wifi</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr>  
+                        </tbody>
+                    </table>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr class="purple">
+                                <th>Microphones</th>
+                                <th>Singstation</th>
+                                <th>Singstation Plus</th>
+                            </tr>
+                            <tr>
+                                <td>Wired</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">No</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless</td>
+                                <td class="feature-no">No</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr>  
+                        </tbody>
+                    </table>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr class="purple-dark">
+                                <th>Hardware</th>
+                                <th>Singstation</th>
+                                <th>Singstation Plus</th>
+                            </tr>
+                            <tr>
+                                <td>Hard drive</td>
+                                <td>250gb</td>
+                                <td>250gb</td>
+                            </tr>
+                            <tr>
+                                <td>Memory</td>
+                                <td>4gb</td>
+                                <td>4gb</td>
+                            </tr>  
+                            <tr>
+                                <td>Power supply</td>
+                                <td>Single 12v</td>
+                                <td>Single 12v</td>
+                            </tr>  
+                            <tr>
+                                <td>Audio out</td>
+                                <td>Balanced 1/4" TRS</td>
+                                <td>Balanced 1/4" TRS</td>
+                            </tr>  
+                            <tr>
+                                <td>Video out</td>
+                                <td>DVI-D</td>
+                                <td>DVI-D</td>
+                            </tr>
+                            <tr>
+                                <td>USB</td>
+                                <td>Single external</td>
+                                <td>Single external</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr class="blue">
+                                <th>Product stats</th>
+                                <th>Singstation</th>
+                                <th>Singstation Plus</th>
+                            </tr>
+                            <tr>
+                                <td>Dimensions (h x w)</td>
+                                <td>700mm x 500mm</td>
+                                <td>700mm x 500mm</td>
+                            </tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td></td>
+                                <td></td>
+                            </tr>  
+                        </tbody>
+                    </table>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr class="grey">
+                                <th>Content</th>
+                                <th>Singstation</th>
+                                <th>Singstation Plus</th>
+                            </tr>
+                            <tr>
+                                <td>9000+ licensed songs</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr>  
+                            <tr>
+                                <td>Intuitive search</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr>  
+                            <tr>
+                                <td>User-friendly interface</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr>  
+                        <tr>
+                        <td>Customizable UI for brands</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr> 
+                            <tr>
+                        <td>Promotional touchscreen messaging</td>
+                                <td class="feature-yes">Yes</td>
+                                <td class="feature-yes">Yes</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row panel panel-6 panel-2-two-items">
+                <div class="col-xs-12">
+                    <h2>Join the people that know</h2>
+                    <p><a href="" class="button">Contact</a></p>
+                </div>
+            </div>
+
         </div>
 
         <footer class="row text-center">

@@ -46,59 +46,6 @@ $(document).ready(function() {
     };
     window.setNav();
 
-    // Set up js carousels, done with Owl carousel plugin
-    var repositionControls = function() {
-        var el = $('.carousel');
-        if (el.length) {
-            var anchor = $(el.data('stickTo')),
-                controls = $('.owl-controls');
-            controls.css({
-                top: anchor.position().top - 15,
-                left: anchor.offset().left - el.offset().left
-            });
-        }
-    };
-
-    if ($.fn.owlCarousel) {
-        $('.carousel').each(function(i, el) {
-            var el = $(el);
-            el.owlCarousel({
-                items: 1,
-                slideSpeed : 300,
-                paginationSpeed : 400,
-                singleItem: true
-                //afterInit: repositionControls
-            });
-        });
-    }
-    // Some carousels only appear on ipad+
-    var updateCarousels = function(){
-        var ipad = (window.innerWidth > deviceWidth.ipad);
-        if(ipad){
-            $('.ipad-carousel').each(function(i, el) {
-                var el = $(el);
-                el.owlCarousel({
-                    items: 1,
-                    slideSpeed : 300,
-                    paginationSpeed : 400,
-                    singleItem: true,
-                    //afterInit: repositionControls
-                });
-            });
-        }   
-    }
-
-    // Enhancements for retina.js
-    // more a work in progress for dev - should be optimised and moved to retina.js later
-    /* To use, set the following on the DOM object:
-        class="dynamic-bg-img"
-        style="background-image: url({{ content_image_phone.url }})"
-        data-img-phone="{{ content_image_phone.url }}"
-        data-img-phone-retina="{{ content_image_phone_retina.url }}" 
-        data-img-desktop="{{ content_image_desktop.url }}"
-        // OPTIONAL super big one!
-        data-img-desktop-plus="{{ content_image_desktop_plus.url }}"
-    */
     var retina = (window.devicePixelRatio > 1);
     // On window for dev so that the include system can call it
     window.updateBackgrounds = function() {
@@ -116,7 +63,11 @@ $(document).ready(function() {
             }
             // If there's a desktop-plus img configured, use that. This is optional.
             if(el.data('imgDesktopPlus')){
-                    source = el.data('imgDesktopPlus');
+                source = el.data('imgDesktopPlus');
+            }
+            // If source is undefined, bail out
+            if(source==undefined){
+                return false;
             }
             // Set the background image if the el is a DIV, or src if IMG
             var bg_size, bg_pos;
@@ -159,79 +110,10 @@ $(document).ready(function() {
     };
     $(window).on('resize', function(){
         updateBackgrounds(),
-        updateDynamicLinks(),
-        updateCarousels()
+        updateDynamicLinks()
     });
     //.on('resize', repositionControls);
     updateBackgrounds();
     updateDynamicLinks();
-    updateCarousels();
 
-    // On window for dev so that the include system can call it
-    window.updateLVBFunctions = function(){
-    
-        // Homepage bar data toggler
-        $('#home .bar-data').hide();
-        $('#home .bar-overview a').click(function(e){
-            // This is for iphone only
-            var ipad = (window.innerWidth > deviceWidth.ipad);
-            if(ipad){ return true; }
-            $($(e.target).attr('data-show')).toggle();
-            // And hide the image tabs for all bars [only the actice content should show]
-            // Also hide all elements tagged with .hidden-when-bar-data-open
-            $('#home .bar-overview, .hidden-when-bar-data-open').toggle();
-            e.preventDefault();
-            // Scroll to it, with header offset removed
-            $('body').scrollTop($($(e.target).attr('data-show')).offset().top-60)
-            return false;
-        });
-
-        // Booking form input toggler (can be used elsewhere with the data-toggles-content="#content-id")
-        $("[data-toggles-content]").each(function(i,el){
-            var el = $(el);
-            var content = $(el.attr("data-toggles-content"))
-            // Hide its hidden content
-            content.hide();
-            // Set listener for showing content
-            el.on('change', function(e){
-                openExtendedForm(el, content);
-                // If it's desktop, redirect to the page with lv bar/franchise open
-                if(window.innerWidth>=deviceWidth.ipad && $('body#home').length){
-                    window.location = 'index-selected.html'
-                }
-            });
-        });
-
-        // Generic content toggler (show/hide)
-        $('.content-toggle-link').each(function(i,el){
-            var el = $(el)
-            var content = el.parent().find(($(el).attr('data-toggle')));
-            content.hide();
-            el.click(function(e){
-                e.preventDefault();
-                content.toggle();
-                // Toggle text/arrow
-                if($('i.arrow-down', el).length){
-                    el.html('Hide details<i class="arrow-up"></i>');
-                }
-                else {
-                    el.html('Show details<i class="arrow-down"></i>');
-                }
-                return false;
-            });
-        });
-    }
-
-    var openExtendedForm = function(el, content){
-        content.show();
-        // remove the .collapsed
-        el.closest('.collapsed').removeClass('collapsed').addClass('form-open');
-        // Set up close
-        el.closest('form').find('.close-form').click(function(e){
-            e.preventDefault();
-            content.hide();
-            el.closest('.form-open').removeClass('form-open').addClass('collapsed');
-            return false;
-        });
-    }
 });
